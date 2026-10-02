@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/*
+  Snobloops design system — "Warm Analog Studio"
+  Deliberately NOT the black+purple AI-demo look.
+  Base: warm espresso ink. Text: bone. Accent: signal ember.
+  Secondary: moss (success/go), gold (credits/stars). No gradients.
+*/
+
+@theme {
+  --color-ink: #14110d;
+  --color-coal: #1c1814;
+  --color-card: #221d17;
+  --color-raise: #2a241c;
+  --color-line: #332a20;
+  --color-bone: #ede4d3;
+  --color-fog: #a89a85;
+  --color-dim: #6f6455;
+  --color-ember: #e8541f;
+  --color-ember-deep: #b23c12;
+  --color-ember-soft: #2b1a10;
+  --color-moss: #8a9a5b;
+  --color-moss-soft: #1d2114;
+  --color-gold: #d9a441;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  background-color: var(--color-ink);
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-ember);
+  color: #fff;
+}
+
+/* thin warm scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ink); }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-dim); }
+
+/* range sliders (BPM, volume, seek) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-line);
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-ember);
+  border: 2px solid var(--color-ink);
+  box-shadow: 0 0 0 1px var(--color-ember);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-ember);
+  border: 2px solid var(--color-ink);
+}
+
+/* dotted tape texture for hero panels */
+.tape-dots {
+  background-image: radial-gradient(var(--color-line) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* focus visibility for a11y */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
